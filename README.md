@@ -7,3 +7,8 @@ producto, otra para ver el detalle con la posibilidad de modificarlo y una acci�
 para borrarlo. Es importante que se pueda filtrar el listado de “Productos” por
 cualquier campo. Usar un Mock para el servicio que consuma la API y así poder
 probar las funcionalidades sin un backend.
+
+## Para levantar el proyecto
+
+- yarn install
+- yarn dev
