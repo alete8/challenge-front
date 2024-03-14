@@ -11,12 +11,12 @@ interface IProps {
 const ProductCard = ({ product }: IProps): JSX.Element => {
   const { setProductSelected, setShowEditModal, setShowDeleteModal } = useContext(ProductsContext)
 
-  const handleEditProduct = () => {
+  const handleEditProduct = (): void => {
     setProductSelected(product)
     setShowEditModal(true)
   }
 
-  const handleDeleteProduct = () => {
+  const handleDeleteProduct = (): void => {
     setProductSelected(product)
     setShowDeleteModal(true)
   }
