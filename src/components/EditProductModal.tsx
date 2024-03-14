@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import useProducts from '../hooks/useProducts'
 import Modal from './Modal'
 import { ProductsContext } from '../context/products'
+import FormInput from './FormInput'
 
 const EditProductModal = (): JSX.Element => {
   const { productSelected, setShowEditModal } = useContext(ProductsContext)
@@ -34,59 +35,10 @@ const EditProductModal = (): JSX.Element => {
         className="flex flex-col items-center w-full gap-2 my-4"
         onSubmit={handleEditProduct}
       >
-        <div className="flex flex-col w-full">
-          <label
-            htmlFor="title"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Titulo
-          </label>
-          <input
-            type="text"
-            id="title"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={title}
-            onChange={(e) => {
-              setTitle(e.target.value)
-            }}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="category" className="block text-gray-700 text-sm font-bold mb-2">Categoría</label>
-          <input
-            type="text"
-            id="category"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value)
-            }}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="price" className="block text-gray-700 text-sm font-bold mb-2">Precio</label>
-          <input
-            type="text"
-            id="price"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={price}
-            onChange={(e) => {
-              setPrice(parseInt(e.target.value))
-            }}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="thumbnail" className="block text-gray-700 text-sm font-bold mb-2">Thumbnail</label>
-          <input
-            type="text"
-            id="thumbnail"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={thumbnail}
-            onChange={(e) => {
-              setThumbnail(e.target.value)
-            }}
-          />
-        </div>
+        <FormInput label='Titulo' value={title} onChange={(e) => { setTitle(e.target.value) }} />
+        <FormInput label='Categoría' value={category} onChange={(e) => { setCategory(e.target.value) }} />
+        <FormInput label='Precio' value={price} onChange={(e) => { setPrice(parseInt(e.target.value)) }} />
+        <FormInput label='Thumbnail' value={thumbnail} onChange={(e) => { setThumbnail(e.target.value) }} />
         <div className='w-full'>
           <button
             type="submit"
