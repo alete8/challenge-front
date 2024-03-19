@@ -12,7 +12,7 @@ const useFilters = (): {
   const filterProducts = (products: ListOfProducts): ListOfProducts => {
     return products?.filter(product => {
       return (
-        product.price >= filters.minPrice &&
+        product.price != null && (product.price >= filters.minPrice) &&
         (filters.category === 'all' || product.category === filters.category)
       )
     })

@@ -12,7 +12,7 @@ const useProducts = (): {
   const { products, setProducts, setShowAddModal, setShowEditModal, setShowDeleteModal } = useContext(ProductsContext)
 
   const addProduct = (product: Product): void => {
-    setProducts((prevState: ListOfProducts) => [...prevState, product])
+    setProducts((prevState: ListOfProducts) => [...(prevState as []), product])
     setShowAddModal(false)
   }
 

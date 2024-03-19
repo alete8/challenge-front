@@ -1,7 +1,13 @@
 import React, { createContext, useState } from 'react'
 import type { FiltersContextType } from '../types'
 
-export const FiltersContext = createContext<FiltersContextType | null>(null)
+export const FiltersContext = createContext<FiltersContextType>({
+  filters: {
+    category: 'all',
+    minPrice: 0
+  },
+  setFilters: () => { }
+})
 
 export const FiltersProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [filters, setFilters] = useState({
